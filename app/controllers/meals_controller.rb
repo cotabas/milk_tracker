@@ -1,4 +1,5 @@
 class MealsController < ApplicationController
+  http_basic_authenticate_with name: "kate", password: "love"
   before_action :set_meal, only: %i[ show edit update destroy ]
 
   # GET /meals or /meals.json
