@@ -1,5 +1,6 @@
-<p style="color: green"><%= notice %></p>
-
+<% unless notice.nil? %>
+  <p class="alert_msg"><%= notice %></p>
+<% end %>
 <%= render "form", meal: @meal %>
 
 <div id="meals">
@@ -11,11 +12,9 @@
     <% end %>
 
     <div class="meal_container">
+
       <%= render meal %>
-      <div>
-        <%= link_to "Edit", edit_meal_path(meal) %>
-        <%= link_to "Destroy", meal, data: { "turbo-method": :delete } %>
-      </div>
+
     </div>
   <% end %>
 </div>

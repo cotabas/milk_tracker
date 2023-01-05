@@ -4,7 +4,16 @@ body {
   background-color: rgb(225, 195, 221);
   font-family: 'Roboto', sans-serif;
 }
-
+.alert_msg {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 70%;
+  background-color: rgb(69, 125, 84);
+  border-radius: 5px;
+  padding: 1rem;
+  opacity: 75%;
+}
 .meal_container {
   display: flex;
   padding-left: 1rem;
@@ -18,8 +27,8 @@ body {
   width: 55%;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5rem;
-  
+  padding: 1rem 1rem;
+  margin-top: 6rem;
 }
 
 .meal_radio {
@@ -51,7 +60,7 @@ a {
 label {
   font-family: 'Roboto', sans-serif;
   display: grid;
-  grid-template-columns: 1em auto;
+  grid-template-columns: repeat(auto-fill, min(80px));
   gap: 0.5em;
 }
 
@@ -86,5 +95,12 @@ input[type="radio"]:checked::before {
 @media screen and (max-width: 800px) {
   .new_meal, .meal_container {
     width: 95%;
+  }
+  .new_meal {
+    flex-direction: column;
+    gap: 10px;
+  }
+  input, .btn {
+    width: 320px;
   }
 }
