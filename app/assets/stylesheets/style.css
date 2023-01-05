@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+body {
+  background-color: rgb(225, 195, 221);
+  font-family: 'Roboto', sans-serif;
+}
+
+.meal_container {
+  display: flex;
+  padding-left: 1rem;
+  justify-content: space-between;
+  width: 65%;
+  padding-bottom: .5rem;
+}
+
+.new_meal {
+  display: flex;
+  width: 55%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+  
+}
+
+.meal_radio {
+  display: flex;
+  gap: 3px;
+}
+.btn {
+  border-radius: 5px;
+  color: rgb(37, 37, 37);
+  font-weight: bold;
+  background-color: #fff;
+  padding: 5px;
+  width: 5rem;
+  border: none;
+}
+
+input {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+label {
+  font-family: 'Roboto', sans-serif;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+}
+
+input[type="radio"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: none;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #000;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+@media screen and (max-width: 800px) {
+  .new_meal, .meal_container {
+    width: 95%;
+  }
+}

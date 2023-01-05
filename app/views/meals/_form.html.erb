@@ -1,0 +1,27 @@
+<%= form_with(model: meal) do |form| %>
+  <% if meal.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(meal.errors.count, "error") %> prohibited this meal from being saved:</h2>
+
+      <ul>
+        <% meal.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="new_meal">
+    <div>
+      <%= form.label :quantity %>
+      <%= form.number_field :quantity %>
+    </div>
+
+    <div class="meal_radio">
+      <%= form.collection_radio_buttons :food, Meal.foods, :first, :first %>
+    </div>
+
+    <div>
+      <%= form.submit "Enter", class: "btn" %>
+    </div>
+  </div>
+<% end %>

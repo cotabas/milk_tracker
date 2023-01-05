@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render "form", meal: @meal %>
+
+<div id="meals">
+  <% @meals.each do |meal| %>
+    <% unless @day.include?(meal.created_at.strftime("%m/%d")) %>
+      <% @day << meal.created_at.strftime("%m/%d") %>
+      <strong><%= @day[-1] %></strong>
+      <br />
+    <% end %>
+
+    <div class="meal_container">
+      <%= render meal %>
+      <div>
+        <%= link_to "Edit", edit_meal_path(meal) %>
+        <%= link_to "Destroy", meal, data: { "turbo-method": :delete } %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
