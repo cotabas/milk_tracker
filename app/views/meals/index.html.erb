@@ -1,20 +1,21 @@
-<% unless notice.nil? %>
-  <p class="alert_msg"><%= notice %></p>
-<% end %>
+
 <%= render "form", meal: @meal %>
 
 <div id="meals">
-  <% @meals.each do |meal| %>
+  <% @meals.reverse.each do |meal| %>
     <% unless @day.include?(meal.created_at.strftime("%m/%d")) %>
       <% @day << meal.created_at.strftime("%m/%d") %>
       <strong><%= @day[-1] %></strong>
       <br />
+      <br />
     <% end %>
 
     <div class="meal_container">
-
-      <%= render meal %>
-
+      <%= form_with(model: meal, data: { turbo_frame: "#{meal.id}_tf" }) do %>
+        <turbo-frame id="<%= meal.id %>_tf">
+          <%= render meal %>
+        </turbo-frame>
+      <% end %>
     </div>
   <% end %>
 </div>

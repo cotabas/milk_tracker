@@ -8,9 +8,16 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= favicon_link_tag asset_path 'favicon.ico' %> 
+    
   </head>
 
   <body>
-    <%= yield %>
+    <% unless notice.nil? %>
+      <p class="alert_msg"><%= notice %></p>
+    <% end %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

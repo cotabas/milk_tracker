@@ -21,14 +21,17 @@ class MealsController < ApplicationController
 
   # GET /meals/1/edit
   def edit
+
   end
 
   # POST /meals or /meals.json
   def create
     @meal = Meal.new(meal_params)
+    
 
     respond_to do |format|
       if @meal.save
+        @meal.created_at = @meal.created_at.change(:usec => 0)
         format.html { redirect_to root_url, notice: "Meal was successfully created." }
         format.json { render :show, status: :created, location: @meal }
       else
@@ -42,7 +45,7 @@ class MealsController < ApplicationController
   def update
     respond_to do |format|
       if @meal.update(meal_params)
-        format.html { redirect_to meal_url(@meal), notice: "Meal was successfully updated." }
+        format.html { redirect_to root_url, notice: "Meal was successfully updated." }
         format.json { render :show, status: :ok, location: @meal }
       else
         format.html { render :edit, status: :unprocessable_entity }

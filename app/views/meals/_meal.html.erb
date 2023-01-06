@@ -1,19 +1,17 @@
 <div id="<%= dom_id meal %>">
 
 
-        <a href="<%= "/meals/#{meal.id}/edit/" %>">
-          <%= image_tag "pen.svg", width: "20px" %>
-        </a>
-        <a href="<%= "/meals/#{meal.id}/" %>" data-turbo-method="delete" data-turbo-confirm="Are you sure?">
-          <%= image_tag "trash.svg", width: "20px"%>
-        </a>
+  <a href="<%= "/meals/#{meal.id}/edit/" %>" data-turbo-frame="<%= meal.id %>_tf">
+    <%= image_tag "pen.svg", width: "20px" %>
+  </a>
+  <a href="<%= "/meals/#{meal.id}/" %>" data-turbo-method="delete" data-turbo-confirm="Are you sure?">
+    <%= image_tag "trash.svg", width: "20px"%>
+  </a>
+
+
   <%= meal.created_at.strftime("%I:%M %p") %>
-    <strong>Type:</strong>
-    <%= meal.food %>
-
-    <strong>Quantity:</strong>
+    <strong><%= meal.food %></strong>
+    
     <%= meal.quantity %> ml
-  
-
 
 </div>
