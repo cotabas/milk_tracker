@@ -4,7 +4,7 @@ class MealsController < ApplicationController
 
   # GET /meals or /meals.json
   def index
-    @meals = Meal.all
+    @meals = Meal.all.sort
     @meal = Meal.new
     @day = []
 
