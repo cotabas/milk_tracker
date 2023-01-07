@@ -9,7 +9,7 @@
   </a>
 
 
-  <%= meal.created_at.strftime("%I:%M %p") %>
+  <%= meal.fed_time.strftime("%I:%M %p") unless meal.fed_time.nil?%>
     <strong><%= meal.food %></strong>
     
     <%= meal.quantity %> ml

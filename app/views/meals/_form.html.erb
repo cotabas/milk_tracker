@@ -16,11 +16,9 @@
     
     <div class="new_meal">
       <div class="inline_edit">
-        <%= form.label :created_at %>
-        <%= form.time_field :created_at %>
+        <input value="<%= meal.fed_time.strftime("%T") unless meal.fed_time.nil? %>" type="time" name="meal[fed_time]" id="meal_fed_time">
       </div>
       <div>
-        <%= form.label :quantity %>
         <%= form.number_field :quantity %>
       </div>
 
