@@ -19,7 +19,7 @@
         <input value="<%= meal.fed_time.strftime("%I:%M") unless meal.fed_time.nil? %>" type="time" name="meal[fed_time]" id="meal_fed_time">
       </div>
       <div>
-        <%= form.number_field :quantity %>
+        <%= form.number_field :quantity, :required => true %>
       </div>
 
       <div class="meal_radio">

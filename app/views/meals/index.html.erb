@@ -6,6 +6,9 @@
     <% unless @day.include?(meal.created_at.strftime("%m/%d")) %>
       <% @day << meal.created_at.strftime("%m/%d") %>
       <strong><%= @day[-1] %></strong>
+      <% @meal_hash[@day[-1]].each do |food, total| %>
+        <strong style="color: #fff"><%= food %>:</strong> <%= total %>
+      <% end %>
       <br />
       <br />
     <% end %>

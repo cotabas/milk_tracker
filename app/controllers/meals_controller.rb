@@ -7,7 +7,24 @@ class MealsController < ApplicationController
     @meals = Meal.all.sort
     @meal = Meal.new
     @day = []
+    @meal_hash = Hash.new
+    @meals.each do |meal|
+      @meal_hash[meal.created_at.strftime("%m/%d")] = [] unless @meal_hash.include?(meal.created_at.strftime("%m/%d"))
+      @meal_hash[meal.created_at.strftime("%m/%d")] << [meal.food, meal.quantity]
+    end
+    @meal_hash.each do |date, val|
+      hash = {
+        'formula' => 0, 
+        'bank' => 0,
+        'breast' => 0,
+        :total => 0 }
+      val.each do |feed| 
+        hash[feed[0]] += feed[1]
+        hash[:total] += feed[1]
+      end
 
+      @meal_hash[date] = hash
+    end
   end
 
   # GET /meals/1 or /meals/1.json
