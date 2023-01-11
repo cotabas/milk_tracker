@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+** Milk Tracker **
 
-Things you may want to cover:
+A simple app for helping my wife and I keep track of how much, and what type of, milk our fresh baby daughter is drinking
 
 * Ruby version
+3.1.2
 
 * System dependencies
+postgresql
 
 * Configuration
+bundle install
 
 * Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+postgresql
 
 * Deployment instructions
 
-* ...
