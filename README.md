@@ -1,6 +1,4 @@
-# README
-
-** Milk Tracker **
+# Milk Tracker
 
 A simple app for helping my wife and I keep track of how much, and what type of, milk our fresh baby daughter is drinking
 
