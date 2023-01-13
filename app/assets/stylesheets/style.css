@@ -35,7 +35,11 @@ body {
   gap: 5px;
   align-items: center;
 }
-
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
 .meal_radio {
   display: flex;
   gap: 3px;
@@ -50,7 +54,7 @@ body {
   border: none;
 }
 
-.btn:hover {
+.btn:hover, a:hover {
   opacity: 70%;
 }
 
